@@ -16,4 +16,6 @@ public interface StudentMapper {
     MarkDTO markToMarkDTO(Mark mark);
 
     List<MarkDTO> marksToMarkDTOs(List<Mark> marks);
+
+    Student studentDTOToStudent(StudentDTO studentDTO);
 }

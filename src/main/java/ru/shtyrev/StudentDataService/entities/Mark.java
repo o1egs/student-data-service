@@ -11,10 +11,16 @@ import ru.shtyrev.StudentDataService.enums.Lesson;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@ToString
 public class Mark {
-    @ManyToOne(fetch = FetchType.LAZY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @ManyToOne()
     @JoinColumn(name = "student_id")
+    @ToString.Exclude
     private Student student;
+    @Enumerated(EnumType.STRING)
     private Lesson lesson;
     private int mark;
 }
